@@ -1,0 +1,323 @@
+.head-container {
+  display: grid;
+  position: relative;
+  height: 70vh;
+  background-color: var(--header-back-color);
+  overflow: hidden;
+}
+*:not(.circle) {
+  z-index: 40;
+}
+
+.circle {
+  width: 100px;
+  filter: blur(5px);
+  box-sizing: border-box;
+  height: 100px;
+  position: absolute;
+  background: linear-gradient(to right, rgb(145, 255, 0) 60%, rgb(0, 255, 98));
+  top: 0%;
+  left: 50%;
+  /* display: none; */
+  border-radius: 50%;
+  z-index: 1;
+  /* animation: ballAnimation 4s linear infinite; */
+  transition: 1s ease-in-out;
+  transition: background 1s ease-in-out;
+}
+
+@keyframes ballAnimation {
+  0% {
+    top: 0;
+    left: 50%;
+  }
+  25% {
+    top: 50%;
+    left: 100%;
+  }
+  50% {
+    top: 100%;
+    left: 50%;
+  }
+  75% {
+    top: 50%;
+    left: 0%;
+  }
+  100% {
+    top: 0;
+    left: 50%;
+  }
+}
+
+.head-inner-container {
+  z-index: 40;
+  padding: 10px 10%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.head-inner-container.visible {
+  z-index: 40;
+  padding: 10px 10%;
+  background-color: cyan;
+  position: fixed;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.theme-btn-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: none;
+}
+.accounts-nav {
+  color: white;
+    z-index: 5;
+  filter: blur(0px);
+}
+
+.accounts-nav.visi {
+    z-index: 100;
+  filter: blur(0px);
+}
+
+.navigation-container {
+  display: block;
+}
+.navigation-container .navigation {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.links > a {
+  text-decoration: none;
+  color: var(--light-color-text);
+}
+
+.logo {
+  background: var(--linear-gradient-one);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.logo::after {
+  content: "Place your logo here";
+  color: rgb(0, 0, 0);
+  font-size: 13px;
+  position: absolute;
+  top: 25px;
+  display: none;
+  background-color: white;
+  padding: 3px;
+  border-radius: 3px;
+  opacity: 60%;
+}
+.logo:hover::after {
+  display: inline-block;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  box-sizing: content-box;
+  position: relative;
+  border-radius: 5rem;
+  border-style: solid;
+  border-color: transparent;
+  height: 1.8rem;
+  width: 30%;
+  overflow: hidden;
+}
+.search-bar .search-input {
+  height: 2rem;
+  width: 100%;
+  border-radius: 5rem;
+  border-style: solid;
+  border-color: transparent;
+  padding-left: 10px;
+  outline: none;
+}
+
+.abutton {
+  background-color: cyan;
+  padding: 6px 10px 6px 10px;
+}
+
+.search-bar .search-btn {
+  position: absolute;
+  height: 2.2rem;
+  width: max-content;
+  right: 0px;
+  cursor: pointer;
+  border: none;
+
+  font-weight: bold;
+}
+
+.motto {
+  font-size: 20px;
+  justify-self: center;
+  width: 500px;
+  animation: none;
+    z-index: 9;
+  transition: 1s ease-in-out;
+}
+.motto:hover {
+  filter: saturate(100%);
+  animation: huerot 2s infinite;
+}
+.our-motto {
+  background-image: var(--linear-gradient-one);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+.links {
+  position: relative;
+  display: inline-block;
+}
+.navigation .links::after {
+  content: "";
+  margin: auto;
+  width: 0%;
+  height: 1px;
+  margin-top: 3px;
+  display: block;
+  background-color: cyan;
+  transition: 0.3s cubic-bezier(0.84, 0.11, 0.19, 0.94);
+}
+
+.navigation .links:hover::after {
+  content: "";
+  width: 80%;
+  height: 1px;
+  margin-top: 3px;
+  display: block;
+  background-color: cyan;
+}
+.links > a {
+  background-color: rgb(255, 255, 255);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: 0.3s ease-in-out;
+}
+.account {
+  position: relative;
+    z-index: 1000;
+  box-sizing: content-box;
+}
+.accounts-head-details {
+  color: rgb(54, 54, 54);
+  padding: 20px;
+  transform-origin: center;
+  background-color: white;
+  border-radius: 5px;
+  display: none;
+  position: absolute;
+  width: 300px;
+  gap: 10px;
+  top: 40px;
+  transform: translateX(-100px);
+  transition: 0.5s ease-in-out;
+}
+
+.visible {
+  display: flex;
+    flex-direction: column;
+}
+
+.accountbtn {
+  padding: 7px 7px 7px 10px;
+  max-height: 70px;
+  border-radius: 5px;
+  border: none;
+  background: none;
+  overflow-wrap: normal;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-align: left;
+}
+.sign-title {
+  margin-bottom: 4px;
+  color: rgb(0, 128, 255);
+  font-size: 17px;
+  font-weight: bold;
+}
+.links > a:hover {
+  background-color: cyan;
+}
+
+.sign-up-in-container {
+  display: flex;
+  width: max-content;
+  gap: 10px;
+  justify-content: space-between;
+}
+.sign-btn {
+  padding: 10px;
+  border-radius: 3px;
+  width: max-content;
+  border: solid var(--linear-gradient-one);
+  border-width: 10px;
+  font-weight: bold;
+  color: white;
+  background: var(--linear-gradient-one);
+  cursor: pointer;
+}
+
+.accounta{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.name-and-pic{
+    display: flex;
+    align-items: center;
+    
+    gap: 10px;
+}
+
+.accounta::after{
+    position: absolute;
+    content: " ";
+    width: 100%;
+    bottom: -5px;
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.14);
+    
+}
+
+.profile-name{
+    font-size: 18px;
+}
+
+.edit-profile-btn{
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+    width: 60px;
+}
+.profile-picture{
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(45deg, blue, purple);
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.22));
+}
+
+.profile-bio{
+    text-align: center;
+}

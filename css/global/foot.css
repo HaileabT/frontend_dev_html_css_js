@@ -1,0 +1,91 @@
+.foot {
+  min-height: 20vh;
+  max-height: 30vh;
+  background-color: var(--header-back-color);
+  padding: 50px 100px;
+  color: rgb(157, 157, 157);
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  align-items: first baseline;
+  line-height: 2rem;
+}
+
+.foot-logo-container {
+  display: grid;
+  justify-items: center;
+}
+.foot-logo-container > * {
+  line-height: 3rem;
+}
+
+.foot-page-links .foot-ulinks {
+  list-style: none;
+}
+
+.foot-ulinks > li {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 8px;
+  width: 120px;
+  height: 1.5rem;
+  margin-bottom: 4px;
+  padding: 4px 2px 4px 10px;
+  display: grid;
+  align-content: center;
+  background-size: 2rem;
+  transition: 0.5s ease-in-out;
+}
+
+.foot-ulinks > li:hover {
+  background-color: rgba(255, 255, 255, 0.13);
+}
+
+.foot-information .foot-infos {
+  list-style: none;
+}
+
+.foot-infos > li {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 8px;
+  width: 120px;
+  height: 1.5rem;
+  margin-bottom: 4px;
+  padding: 4px 2px 4px 10px;
+  display: grid;
+  align-content: center;
+  background-size: 2rem;
+  transition: 0.5s ease-in-out;
+}
+
+.foot-infos > li:hover {
+  background-color: rgba(255, 255, 255, 0.13);
+}
+
+.foot-btn-cont {
+  display: grid;
+  place-items: center;
+  background: var(--linear-gradient-btns);
+  width: max-content;
+  padding: 5px;
+  border-radius: 5px;
+  animation: none;
+  transition: 1s ease-in-out;
+}
+
+.foot-btn {
+  background: var(--header-back-color);
+  box-sizing: border-box;
+}
+
+.foot-btn-cont:hover {
+  animation: huerot 1s linear infinite;
+  filter: saturate(100%);
+}
+@keyframes huerot {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(-360deg);
+  }
+}
